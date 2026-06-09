@@ -2,11 +2,11 @@
 using StructuralCalculation.Sections;
 using StructuralCalculation.Sections.Polygons;
 
-Rectangle rectangle = new Rectangle(10, 5);
+RightTrapezoid trapezoid = new RightTrapezoid(10,6,4);
 
-Console.WriteLine($"Area = {rectangle.Area()}");
-Console.WriteLine($"Ix = {rectangle.MomentOfInertiaX()}");
-Console.WriteLine($"Iy = {rectangle.MomentOfInertiaY()}");
-Console.WriteLine(rectangle.CentroidX());
-Console.WriteLine(rectangle.CentroidY());
-Console.WriteLine(rectangle.ProductOfInertia());
+Console.WriteLine($"Area = {trapezoid.Area()}");
+Console.WriteLine($"Ix = {trapezoid.MomentOfInertiaX()}");
+Console.WriteLine($"Iy = {trapezoid.MomentOfInertiaY()}");
+Console.WriteLine(trapezoid.CentroidX());
+Console.WriteLine(trapezoid.CentroidY());
+Console.WriteLine(trapezoid.ProductOfInertia());
