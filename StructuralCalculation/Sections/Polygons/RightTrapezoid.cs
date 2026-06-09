@@ -15,8 +15,13 @@ public class RightTrapezoid : Polygon
     public double LargerBase { get; }
     public double SmallerBase { get; }
     public double HeightTrapezoid { get; }
+    public enum VerticalSidePosition
+    {
+        Left,
+        Right
+    }
 
-    public RightTrapezoid(double largerBase, double smallerBase, double heighttrapezoid)
+    public RightTrapezoid(double largerBase, double smallerBase, double heighttrapezoid, VerticalSidePosition verticalSidePosition)
     {
         if (largerBase <= 0 || smallerBase <= 0 || heighttrapezoid <= 0)
             throw new ArgumentException("Width must be positive.");
@@ -24,13 +29,21 @@ public class RightTrapezoid : Polygon
         SmallerBase = smallerBase;
         HeightTrapezoid = heighttrapezoid;
 
-        _vertices = new List<Point2D>
-        {
-            new Point2D(0, 0),
-            new Point2D(LargerBase, 0),
-            new Point2D(LargerBase, HeightTrapezoid),
-            new Point2D((LargerBase-SmallerBase), HeightTrapezoid),
-        };
-
+        if (verticalSidePosition == VerticalSidePosition.Right)
+            _vertices = new List<Point2D>
+            {
+                new Point2D(0, 0),
+                new Point2D(LargerBase, 0),
+                new Point2D(LargerBase, HeightTrapezoid),
+                new Point2D((LargerBase-SmallerBase), HeightTrapezoid),
+            };
+        else
+            _vertices = new List<Point2D>
+            {
+                new Point2D(0, 0),
+                new Point2D(LargerBase, 0),
+                new Point2D(SmallerBase, HeightTrapezoid),
+                new Point2D(0, HeightTrapezoid),
+            };
     }
 }

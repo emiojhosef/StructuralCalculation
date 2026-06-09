@@ -2,7 +2,7 @@
 using StructuralCalculation.Sections;
 using StructuralCalculation.Sections.Polygons;
 
-RightTrapezoid trapezoid = new RightTrapezoid(10,6,4);
+RightTrapezoid trapezoid = new RightTrapezoid(10,6,4, RightTrapezoid.VerticalSidePosition.Left);
 
 Console.WriteLine($"Area = {trapezoid.Area()}");
 Console.WriteLine($"Ix = {trapezoid.MomentOfInertiaX()}");
