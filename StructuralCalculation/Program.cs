@@ -1,12 +1,11 @@
 ﻿using StructuralCalculation.Geometry;
 using StructuralCalculation.Sections;
+using StructuralCalculation.Sections.CircularSections;
 using StructuralCalculation.Sections.Polygons;
 
-RightTrapezoid trapezoid = new RightTrapezoid(10,6,4, RightTrapezoid.VerticalSidePosition.Left);
+SemiCircle semiCircle = new SemiCircle(10);
 
-Console.WriteLine($"Area = {trapezoid.Area()}");
-Console.WriteLine($"Ix = {trapezoid.MomentOfInertiaX()}");
-Console.WriteLine($"Iy = {trapezoid.MomentOfInertiaY()}");
-Console.WriteLine(trapezoid.CentroidX());
-Console.WriteLine(trapezoid.CentroidY());
-Console.WriteLine(trapezoid.ProductOfInertia());
+Console.WriteLine(semiCircle.Area());
+Console.WriteLine(semiCircle.CentroidY());
+Console.WriteLine(semiCircle.MomentOfInertiaX());
+Console.WriteLine(semiCircle.MomentOfInertiaY());
