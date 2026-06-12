@@ -16,8 +16,10 @@ public class Rectangle : Polygon
 
     public double Width { get; }
     public double Height { get; }
+    public double OffsetX { get; }
+    public double OffsetY { get; }
 
-    public Rectangle (double width, double height)
+    public Rectangle (double width, double height, double offsetX, double offsetY)
     {
         if (width <= 0)
             throw new ArgumentException("Width must be positive.");
@@ -26,8 +28,10 @@ public class Rectangle : Polygon
             throw new ArgumentException("Height must be positive.");
         Width = width; 
         Height = height;
-        _vertices = new List<Point2D>{ new Point2D (0, 0), new Point2D (width, 0), 
-            new Point2D (width, height), new Point2D (0, height),};
+        OffsetX = offsetX;
+        OffsetY = offsetY;
+        _vertices = new List<Point2D>{ new Point2D (0+offsetX, offsetY), new Point2D (width+offsetX, offsetY), 
+            new Point2D (width+offsetX, height+offsetY), new Point2D (0+offsetX, height+offsetY),};
 
     }
 }

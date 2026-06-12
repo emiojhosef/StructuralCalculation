@@ -9,13 +9,17 @@ namespace StructuralCalculation.Sections.CircularSections;
 public class Circle : Section
 {
     public double Radius { get; }
+    public double OffsetX { get; }
+    public double OffsetY { get; }
 
-    public Circle(double radius)
+    public Circle(double radius, double offsetX, double offsetY)
     {
         if (radius <= 0)
             throw new ArgumentException("Radius must be positive.");
 
         Radius = radius;
+        OffsetX = offsetX;
+        OffsetY = offsetY;
     }
 
     public override double Area()
@@ -25,12 +29,12 @@ public class Circle : Section
 
     public override double CentroidX()
     {
-        return 0;
+        return OffsetX;
     }
 
     public override double CentroidY()
     {
-        return 0;
+        return OffsetY;
     }
 
     public override double MomentOfInertiaX()

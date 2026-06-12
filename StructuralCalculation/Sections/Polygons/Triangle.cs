@@ -17,6 +17,8 @@ public class Triangle : Polygon
     public double SideA {  get; }
     public double SideB { get; }
     public double SideC {  get; }
+    public double OffsetX { get; }
+    public double OffsetY { get; }
 
     public bool ConditionOfExistence()
     {
@@ -46,20 +48,22 @@ public class Triangle : Polygon
         return AdjacentLeg;
 
     }
-    public Triangle(double sideA, double sideB, double sideC)
+    public Triangle(double sideA, double sideB, double sideC, double offsetX, double offsetY)
     {
         SideA = sideA;
         SideB = sideB;
         SideC = sideC;
+        OffsetX = offsetX;
+        OffsetY = offsetY;
 
         if (ConditionOfExistence()==false)
             throw new ArgumentException("The sum of two sides must be greater than the length of the other, or All sides must be positive..");
 
         _vertices = new List<Point2D>
         {
-            new Point2D(0,0),
-            new Point2D(SideA,0),
-            new Point2D(OrthogonalProjectionOfB(),HeightTriangle()),
+            new Point2D(offsetX,offsetY),
+            new Point2D(SideA+offsetX,offsetY),
+            new Point2D(OrthogonalProjectionOfB()+offsetX,HeightTriangle()+offsetY),
         };
 
     }
