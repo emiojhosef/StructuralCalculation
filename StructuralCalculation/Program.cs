@@ -1,13 +1,10 @@
 ﻿using StructuralCalculation.Sections.HollowSections;
 
-CircularTube tube =
-    new CircularTube(
-        10,
-        5,
-        0,
-        0,
-        0,
-        0);
+TriangularTube tube =
+    new TriangularTube(
+        10, 10, 10, 0, 0,
+        5, 5, 5,
+        2.5, 1.4433756729740645);
 
 Console.WriteLine($"Area = {tube.Area()}");
 Console.WriteLine($"Cx = {tube.CentroidX()}");

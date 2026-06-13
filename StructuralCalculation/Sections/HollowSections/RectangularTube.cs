@@ -26,11 +26,9 @@ public class RectangularTube:Section
         if (largerWidth <= 0 || largerHeight <= 0 || smallerWidth <= 0 || smallerHeight<=0)
             throw new ArgumentException("All valors must be positive.");
         if (smallerWidth >= largerWidth)
-            throw new ArgumentException(
-                "Inner width must be smaller than outer width.");
+            throw new ArgumentException("Inner width must be smaller than outer width.");
         if (smallerHeight >= largerHeight)
-            throw new ArgumentException(
-                "Inner height must be smaller than outer height.");
+            throw new ArgumentException("Inner height must be smaller than outer height.");
         LargerWidth = largerWidth;
         LargerHeight = largerHeight;
         OffsetXLargerWidth = largerOffsetX;

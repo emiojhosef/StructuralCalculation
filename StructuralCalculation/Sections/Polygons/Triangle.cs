@@ -14,6 +14,8 @@ public class Triangle : Polygon
 
     protected override IReadOnlyList<Point2D> Vertices => _vertices;
 
+    public IReadOnlyList<Point2D> VertexList => _vertices;
+
     public double SideA {  get; }
     public double SideB { get; }
     public double SideC {  get; }
