@@ -1,14 +1,6 @@
 ﻿using StructuralCalculation.Sections.HollowSections;
+using StructuralCalculation.Sections.Polygons;
+Rectangle rectangle = new Rectangle(20, 30, 10, 5);
 
-TriangularTube tube =
-    new TriangularTube(
-        10, 10, 10, 0, 0,
-        5, 5, 5,
-        2.5, 1.4433756729740645);
-
-Console.WriteLine($"Area = {tube.Area()}");
-Console.WriteLine($"Cx = {tube.CentroidX()}");
-Console.WriteLine($"Cy = {tube.CentroidY()}");
-Console.WriteLine($"Ix = {tube.MomentOfInertiaX()}");
-Console.WriteLine($"Iy = {tube.MomentOfInertiaY()}");
-Console.WriteLine($"Ixy = {tube.ProductOfInertia()}");
+Console.WriteLine(rectangle.MomentOfInertiaX());
+Console.WriteLine(rectangle.CentroidY());
