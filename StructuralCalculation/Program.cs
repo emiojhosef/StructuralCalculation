@@ -1,6 +1,16 @@
-﻿using StructuralCalculation.Sections.HollowSections;
+﻿using StructuralCalculation.Sections.CompositeSection;
+using StructuralCalculation.Sections.HollowSections;
 using StructuralCalculation.Sections.Polygons;
-Rectangle rectangle = new Rectangle(20, 30, 10, 5);
+CompositeSection section =
+    new CompositeSection(
+    [
+        new Rectangle(10, 10, 0, 0),
+        new Rectangle(10, 10, 10, 0)
+    ]);
 
-Console.WriteLine(rectangle.MomentOfInertiaX());
-Console.WriteLine(rectangle.CentroidY());
+Console.WriteLine(section.Area());
+Console.WriteLine(section.CentroidX());
+Console.WriteLine(section.CentroidY());
+Console.WriteLine(section.MomentOfInertiaX());
+Console.WriteLine(section.MomentOfInertiaY());
+Console.WriteLine(section.ProductOfInertia());
