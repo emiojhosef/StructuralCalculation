@@ -1,16 +1,15 @@
 ﻿using StructuralCalculation.Sections.CompositeSection;
-using StructuralCalculation.Sections.HollowSections;
-using StructuralCalculation.Sections.Polygons;
-CompositeSection section =
-    new CompositeSection(
-    [
-        new Rectangle(10, 10, 0, 0),
-        new Rectangle(10, 10, 10, 0)
-    ]);
 
-Console.WriteLine(section.Area());
-Console.WriteLine(section.CentroidX());
-Console.WriteLine(section.CentroidY());
-Console.WriteLine(section.MomentOfInertiaX());
-Console.WriteLine(section.MomentOfInertiaY());
-Console.WriteLine(section.ProductOfInertia());
+TSection t =
+    new TSection(
+        20,
+        2,
+        30,
+        2);
+
+Console.WriteLine($"Area = {t.Area()}");
+Console.WriteLine($"Cx = {t.CentroidX()}");
+Console.WriteLine($"Cy = {t.CentroidY()}");
+Console.WriteLine($"Ix = {t.MomentOfInertiaX()}");
+Console.WriteLine($"Iy = {t.MomentOfInertiaY()}");
+Console.WriteLine($"Ixy = {t.ProductOfInertia()}");
