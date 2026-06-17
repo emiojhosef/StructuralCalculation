@@ -1,15 +1,15 @@
 ﻿using StructuralCalculation.Sections.CompositeSection;
 
-TSection t =
-    new TSection(
-        20,
-        2,
-        30,
-        2);
+HSection h = new HSection(
+    20, // largura mesa
+    2,  // espessura mesa
+    30, // altura alma
+    2   // espessura alma
+);
 
-Console.WriteLine($"Area = {t.Area()}");
-Console.WriteLine($"Cx = {t.CentroidX()}");
-Console.WriteLine($"Cy = {t.CentroidY()}");
-Console.WriteLine($"Ix = {t.MomentOfInertiaX()}");
-Console.WriteLine($"Iy = {t.MomentOfInertiaY()}");
-Console.WriteLine($"Ixy = {t.ProductOfInertia()}");
+Console.WriteLine($"Area = {h.Area()}");
+Console.WriteLine($"Cx = {h.CentroidX()}");
+Console.WriteLine($"Cy = {h.CentroidY()}");
+Console.WriteLine($"Ix = {h.MomentOfInertiaX()}");
+Console.WriteLine($"Iy = {h.MomentOfInertiaY()}");
+Console.WriteLine($"Ixy = {h.ProductOfInertia()}");
