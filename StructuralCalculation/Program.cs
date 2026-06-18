@@ -1,15 +1,14 @@
 ﻿using StructuralCalculation.Sections.CompositeSection;
 
-USection u =
-    new USection(
-        20,
-        2,
-        30,
-        2);
+LSection l = new LSection(
+    20, // flangeWidth
+    2,  // flangeThickness
+    30, // webHeight
+    2); // webThickness
 
-Console.WriteLine($"Area = {u.Area()}");
-Console.WriteLine($"Cx = {u.CentroidX()}");
-Console.WriteLine($"Cy = {u.CentroidY()}");
-Console.WriteLine($"Ix = {u.MomentOfInertiaX()}");
-Console.WriteLine($"Iy = {u.MomentOfInertiaY()}");
-Console.WriteLine($"Ixy = {u.ProductOfInertia()}");
+Console.WriteLine($"Area = {l.Area()}");
+Console.WriteLine($"Cx = {l.CentroidX()}");
+Console.WriteLine($"Cy = {l.CentroidY()}");
+Console.WriteLine($"Ix = {l.MomentOfInertiaX()}");
+Console.WriteLine($"Iy = {l.MomentOfInertiaY()}");
+Console.WriteLine($"Ixy = {l.ProductOfInertia()}");
