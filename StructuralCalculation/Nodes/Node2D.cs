@@ -8,15 +8,15 @@ using StructuralCalculation.Supports;
 namespace StructuralCalculation.Nodes;
 
 
-public struct Node2D
+public class Node2D
 {
     public double X { get; }
     public double Y { get; }
-    public Support Node { get; }
-    public Node2D(double x, double y, Support node)
+    public Support? Support { get; }
+    public Node2D(double x, double y, Support? support = null)
     {
         X= x;
         Y= y;
-        Node = node;
+        Support = support;
     }
 }
